@@ -6,12 +6,11 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 22:30:50 by feralves          #+#    #+#             */
-/*   Updated: 2023/03/04 16:58:13 by feralves         ###   ########.fr       */
+/*   Updated: 2023/03/04 17:52:02 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 /**
 *@brief counts how many numbers are lower than the first number in the stack and
@@ -71,7 +70,7 @@ void	ft_algorithm(t_stack *stack_a, t_stack *stack_b)
 			ft_rotate(stack_a, 'a');
 		else if (percentage_a > 7 && percentage_b < 83)
 			ft_double_rotate(stack_a, stack_b);
-	}  
+	}
 	while (stack_a->size >= 50 && stack_a->size < 100)
 	{
 		percentage_a = ft_calculate_lower(stack_a, stack_a->size);
@@ -79,7 +78,8 @@ void	ft_algorithm(t_stack *stack_a, t_stack *stack_b)
 			percentage_b = ft_calculate_lower(stack_b, stack_b->size);
 		if (percentage_a <= 13 && percentage_b < 71)
 		{
-			if (stack_b->size >= 3 && stack_b->first->data > stack_b->first->next->data)
+			if (stack_b->size >= 3 && stack_b->first->data
+				> stack_b->first->next->data)
 			{
 				if (stack_b->first->data < stack_b->first->next->next->data)
 					ft_swap(stack_b, 'b');
@@ -94,7 +94,7 @@ void	ft_algorithm(t_stack *stack_a, t_stack *stack_b)
 			ft_rotate(stack_a, 'a');
 		else if (percentage_a > 13 && percentage_b < 71)
 			ft_double_rotate(stack_a, stack_b);
-	}   
+	}
 	while (stack_a->size > 5 && stack_a->size < 50)
 	{
 		percentage_a = ft_calculate_lower(stack_a, stack_a->size);

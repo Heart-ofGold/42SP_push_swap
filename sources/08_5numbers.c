@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 08:56:12 by mcarecho          #+#    #+#             */
-/*   Updated: 2023/03/04 16:15:10 by feralves         ###   ########.fr       */
+/*   Updated: 2023/03/04 17:52:28 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ t_move	find_greater_pos(t_stack *stack)
 		temp = temp->next;
 		i++;
 	}
-	// ft_printf("in a large: %d, %d\n", move.pos, move.value);
 	return (move);
 }
 
@@ -56,7 +55,6 @@ t_move	find_smaller_pos(t_stack *stack)
 		temp = temp->next;
 		i++;
 	}
-	// ft_printf("in a small: %d, %d\n", move.pos, move.value);
 	return (move);
 }
 
@@ -114,7 +112,8 @@ void	algorithm_to_5(t_stack *stack_source, t_stack *stack_dest)
 		p_min = find_smaller_pos(stack_source);
 		if (p_min.pos == 1 || p_max.pos == 1)
 			ft_pb(stack_source, stack_dest);
-		else if (p_max.pos == stack_source->size || p_min.pos == stack_source->size)
+		else if (p_max.pos == stack_source->size
+			|| p_min.pos == stack_source->size)
 			ft_reverse_rotate(stack_source, 'a');
 		else if (p_max.pos == 2 || p_min.pos == 2)
 			ft_swap(stack_source, 'a');
@@ -125,6 +124,4 @@ void	algorithm_to_5(t_stack *stack_source, t_stack *stack_dest)
 	}
 	algorithm_to_3(stack_source, 'a');
 	return_to_a(stack_source, stack_dest);
-	// ft_printf("final sort 5\n");
-	// ft_print_stack_simple(stack_source, 'a');
 }
